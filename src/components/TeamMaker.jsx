@@ -27,7 +27,8 @@ const TeamMaker = ({ teams }) => {
   useEffect(() => {
     const fetchSkills = async () => {
       try {
-        const res = await fetch("/SkillsData.json"); // Correct for public folder
+        // For fetching directly from GitHub raw content
+        const res = await fetch("https://raw.githubusercontent.com/ankmay0/teamManager1/main/my-react-app/public/SkillsData.json");
         const result = await res.json();
         setSkillsList(result);
       } catch (error) {
